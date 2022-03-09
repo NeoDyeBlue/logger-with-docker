@@ -58,6 +58,7 @@ export default function TraceLogs() {
         </th>
         <td>{log.timestamp}</td>
         <td>{log.method}</td>
+        <td>{log.status}</td>
         <td>{log.url}</td>
         <td>{log.userIP}</td>
         <td>{log.host}</td>

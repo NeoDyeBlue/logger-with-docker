@@ -41,6 +41,7 @@ export default function LogsLayout({ children }) {
               <th scope="col">Level</th>
               <th scope="col">Timestamp</th>
               <th scope="col">Method</th>
+              <th scope="col">HTTP Status</th>
               <th scope="col">URL/ Referer</th>
               <th scope="col">UserIP</th>
               <th scope="col">Host</th>

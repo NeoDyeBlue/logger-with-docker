@@ -58,6 +58,7 @@ export default function ErrorLogs() {
         </th>
         <td>{log.timestamp}</td>
         <td>{log.method}</td>
+        <td>{log.status}</td>
         <td>{log.url}</td>
         <td>{log.userIP}</td>
         <td>{log.host}</td>
@@ -67,39 +68,7 @@ export default function ErrorLogs() {
   });
   return (
     <>
-      <tbody>
-        {rows.reverse()}
-        {/* <tr>
-          <th scope="row">
-            <span className="badge bg-danger">ERROR</span>
-          </th>
-          <td>{new Date().toGMTString()}</td>
-          <td>GET</td>
-          <td>http://localhost:3000/logs</td>
-          <td>192.168.0.1</td>
-          <td>localhost</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <span className="badge bg-danger">ERROR</span>
-          </th>
-          <td>{new Date().toGMTString()}</td>
-          <td>GET</td>
-          <td>http://localhost:3000/logs</td>
-          <td>192.168.0.1</td>
-          <td>localhost</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <span className="badge bg-danger">ERROR</span>
-          </th>
-          <td>{new Date().toGMTString()}</td>
-          <td>GET</td>
-          <td>http://localhost:3000/logs</td>
-          <td>192.168.0.1</td>
-          <td>localhost</td>
-        </tr> */}
-      </tbody>
+      <tbody>{rows.reverse()}</tbody>
     </>
   );
 }
