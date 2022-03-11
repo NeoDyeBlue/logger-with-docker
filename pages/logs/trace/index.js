@@ -2,17 +2,17 @@ import Head from "next/head";
 import Layout from "../../../components/Layout";
 import LogsLayout from "../../../components/LogsLayout";
 import { useState, useEffect } from "react";
-// import * as logger from "../../../lib/logger";
+import * as logger from "../../../lib/logger";
 
-// export async function getServerSideProps(context) {
-//   const { req } = context;
+export async function getServerSideProps(context) {
+  const { req } = context;
 
-//   await logger.info(req, "get trace logs");
-//   const data = await logger.fetchTrace();
-//   !data.length && (await logger.warn(req, "fetched trace logs was empty"));
+  logger.info(req, 200, "trace logs tab");
 
-//   return { props: { data } };
-// }
+  return {
+    props: { content: null },
+  };
+}
 
 export default function TraceLogs() {
   const [data, setData] = useState(null);

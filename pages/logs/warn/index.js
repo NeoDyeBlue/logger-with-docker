@@ -1,17 +1,17 @@
-import Head from "next/head";
 import Layout from "../../../components/Layout";
 import LogsLayout from "../../../components/LogsLayout";
 import { useState, useEffect } from "react";
-// import * as logger from "../../../lib/logger";
+import * as logger from "../../../lib/logger";
 
-// export async function getServerSideProps(context) {
-//   const { req } = context;
+export async function getServerSideProps(context) {
+  const { req } = context;
 
-//   await logger.info(req, "get warn logs");
-//   const data = await logger.fetchWarn();
+  logger.info(req, 200, "warn logs tab");
 
-//   return { props: { data } };
-// }
+  return {
+    props: { content: null },
+  };
+}
 
 export default function WarnLogs() {
   const [data, setData] = useState(null);

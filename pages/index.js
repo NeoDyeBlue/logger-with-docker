@@ -1,6 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/Layout";
+import * as logger from "../lib/logger";
+
+export async function getServerSideProps(context) {
+  const { req } = context;
+
+  logger.info(req, 200, "home page");
+  console.log(req);
+
+  return {
+    props: { content: null },
+  };
+}
 
 export default function Home() {
   return (
