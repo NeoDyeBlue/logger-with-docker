@@ -1,6 +1,7 @@
-import Head from "next/head";
 import Layout from "../../../components/Layout";
 import LogsLayout from "../../../components/LogsLayout";
+import Loader from "../../../components/Loader";
+import NoLogs from "../../../components/NoLogs";
 import { useState, useEffect } from "react";
 import * as logger from "../../../lib/logger";
 
@@ -28,27 +29,9 @@ export default function AllLogs() {
       });
   }, []);
 
-  if (isLoading)
-    return (
-      <tbody>
-        <tr>
-          <td className="text-center text-muted" colSpan="7">
-            Loading...
-          </td>
-        </tr>
-      </tbody>
-    );
+  if (isLoading) return <Loader />;
 
-  if (!data || !data.length)
-    return (
-      <tbody>
-        <tr>
-          <td className="text-center text-muted" colSpan="7">
-            No logs
-          </td>
-        </tr>
-      </tbody>
-    );
+  if (!data || !data.length) return <NoLogs />;
 
   const rows = data.map((log) => {
     let style = null;

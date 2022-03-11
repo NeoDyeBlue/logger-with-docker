@@ -27,27 +27,9 @@ export default function WarnLogs() {
       });
   }, []);
 
-  if (isLoading)
-    return (
-      <tbody>
-        <tr>
-          <td className="text-center text-muted" colSpan="7">
-            Loading...
-          </td>
-        </tr>
-      </tbody>
-    );
+  if (isLoading) return <Loader />;
 
-  if (!data || !data.length)
-    return (
-      <tbody>
-        <tr>
-          <td className="text-center text-muted" colSpan="7">
-            No logs
-          </td>
-        </tr>
-      </tbody>
-    );
+  if (!data || !data.length) return <NoLogs />;
 
   const rows = data.map((log) => {
     return (
