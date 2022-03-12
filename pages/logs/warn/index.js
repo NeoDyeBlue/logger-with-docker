@@ -1,5 +1,7 @@
 import Layout from "../../../components/Layout";
 import LogsLayout from "../../../components/LogsLayout";
+import Loader from "../../../components/Loader";
+import NoLogs from "../../../components/NoLogs";
 import { useState, useEffect } from "react";
 import * as logger from "../../../lib/logger";
 
