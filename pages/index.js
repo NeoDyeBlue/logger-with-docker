@@ -7,7 +7,6 @@ export async function getServerSideProps(context) {
   const { req } = context;
 
   logger.info(req, 200, "home page");
-  console.log(req);
 
   return {
     props: { content: null },
